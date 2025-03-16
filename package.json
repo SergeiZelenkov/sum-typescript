@@ -1,0 +1,35 @@
+{
+  "name": "sum-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/SergeiZelenkov/sum-typescript#readme",
+  "bugs": {
+    "url": "https://github.com/SergeiZelenkov/sum-typescript/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SergeiZelenkov/sum-typescript.git"
+  },
+  "license": "ISC",
+  "author": "Sergei Zelenkov <sz.zelenkov@gmx.de>",
+  "type": "commonjs",
+  "main": "webpack.config.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@typescript-eslint/eslint-plugin": "^8.26.1",
+    "@typescript-eslint/parser": "^8.26.1",
+    "eslint": "^9.22.0",
+    "ts-jest": "^29.2.6",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.8.2",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.0"
+  }
+}
