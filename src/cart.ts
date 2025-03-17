@@ -1,42 +1,29 @@
-interface Arr {
-    id: number;
-    name: string;
-    price: number;
-    discount?: number;
+interface Buyable {
+  id: number;
+  name: string;
+  price: number;
+  discount?: number;
+}
+
+export class Cart {
+  _items: Buyable[] = [];
+
+  add(item: Buyable): void {
+    this._items.push(item);
   }
-  
-  export class Cart {
-    _items: Arr[] = [];
-  
-    add(item: Arr): void {
-      this._items.push(item);
-    }
-    get items(): Arr[] {
-      return [...this._items];
-    }
-  
-    sum() {
-      let total = 0;
-      for (let item of this._items) {
-        total += item.price;
-      }
-      return total;
-    }
-  
-    discountSum(discount: number) {
-      let total = 0;
-      for (let item of this._items) {
-        total += item.price;
-      }
-      return total * (1 - discount / 100);
-    }
-  
-    deleteItem(idItem: number): void {
-      for (let i = 0; i < this._items.length; i++) {
-        if (this._items[i].id === idItem) {
-          this._items.splice(i, 1);
-          break;
-        }
-      }
-    }
+  get items(): Buyable[] {
+    return [...this._items];
   }
+
+  sum() {
+    return this._items.reduce((acc, item) => acc + item.price, 0);
+  }
+
+  discountSum(discount: number) {
+    return this.sum() * (1 - discount / 100);
+  }
+
+  deleteItem(idItem: number): void {
+    this._items = this._items.filter((item) => item.id !== idItem);
+  }
+}

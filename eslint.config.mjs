@@ -4,6 +4,9 @@ import eslintParserTs from '@typescript-eslint/parser';
 /** @type {import('eslint').Linter.FlatConfig[]} */
 export default [
   {
+    ignores: ['coverage/**'],
+  },
+  {
     files: ['**/*.ts', '**/*.tsx'],
     languageOptions: {
       parser: eslintParserTs,
